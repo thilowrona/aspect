@@ -10,7 +10,7 @@
             background: lightgray;
 	font-family: monospace;
             width: 75%;
-            padding: 10px;
+            padding: 10px;word-wrap: break-word;
         }
 
         .editbox {
@@ -33,121 +33,19 @@
 
 <body>
 
-    <p class="note">NOTE: The most recent version of this document is always available at:<br/>
-        <a style="font-size:75%" id="onlineurl" href="https://geodynamics.github.io/aspect/cite.html">https://geodynamics.github.io/aspect/cite.html</a>.
+    <p class="note">NOTE: a link with your selection is available at:<br/>
+        <a style="font-size:75%" id="onlineurl" href="https://geodynamics.github.io/aspect/cite.html">https://geodynamics.github.io/aspect/cite.html</a>
     </p>
 
+<script src="database.js"></script>
+        
     <script type="text/javascript">
         var checkboxes = ["fs", "melt","particles","dg"];
 
 	var x= 'abc\"def';
 
-        var papers = {
-            aspect1: {
-                text: "Kronbichler, M., Heister, T., &amp; Bangerth, W. (2012). High accuracy mantle convection simulation through modern numerical methods. Geophysical Journal International, 191(1), 12–29. doi:10.1111/j.1365-246x.2012.05609.x",
-                bibtexkey: "KHB12",
-                bibtex: '@Article{KHB12,\nTitle   = {High Accuracy Mantle Convection Simulation through Modern Numerical Methods},\nAuthor  = {M. Kronbichler and T. Heister and W. Bangerth},\nJournal = {Geophysical Journal International},\nYear    = {2012},\nPages   = {12-29},\nVolume  = {191},\ndoi     = {10.1111/j.1365-246X.2012.05609.x},\nurl     = {http://dx.doi.org/10.1111/j.1365-246X.2012.05609.x}\n}',
-                url: "http://aspect1",
-                scholar: "",
-	group: "main"
-            },
 
-            aspect2: {
-                text: "Heister, T., Dannberg, J., Gassmöller, R., &amp; Bangerth, W. (2017). High Accuracy Mantle Convection Simulation through Modern Numerical Methods. II: Realistic Models and Problems. Geophysical Journal International. doi:10.1093/gji/ggx195",
-                bibtexkey: "heister_aspect_methods2",
-                bibtex: '@article{heister_aspect_methods2,\ntitle = {High Accuracy Mantle Convection Simulation through Modern Numerical Methods. II: Realistic Models and Problems},\nauthor = {Timo Heister and Juliane Dannberg and Rene Gassm{\"o}ller and Wolfgang Bangerth}\ndoi = {10.1093/gji/ggx195},\nurl = {https://doi.org/10.1093/gji/ggx195}\n}',
-                url: "http://aspect1",
-                scholar: "",
-	group: "main"
-            },
-
-            aspectmanual: {
-                text: "Bangerth, W., Dannberg, J., Gassmoeller, R., Heister, T., &amp; Others. (2017). ASPECT: Advanced Solver for Problems in Earth’s ConvecTion, User Manual. Figshare. https://doi.org/10.6084/m9.figshare.4865333",
-                bibtexkey: "aspectmanual",
-                bibtex: '@Article{aspectmanual,\n@Article{aspectmanual,\nTitle         = {{\textsc{ASPECT}: Advanced Solver for Problems in Earth\'s ConvecTion, User Manual}},\nAuthor        = {W. Bangerth and J. Dannberg and R. Gassm{\\\"o}ller and T. Heister and others},\nYear          = {2017},\nMonth         = {4},\nDOI           = {10.6084/m9.figshare.4865333},\nNote          = {doi:10.6084/m9.figshare.4865333},\nURL           = {https://doi.org/10.6084/m9.figshare.4865333}\n}',
-                url: "http://aspect1",
-                scholar: "",
-	group: "1.5.0"
-            },
-
-
-	    manual140: {
-                text: "W. Bangerth and T. Heister and others:\nASPECT: Advanced Solver for Problems in Earth's ConvecTion v1.4.0\nComputational Infrastructure for Geodynamics, 2016.\nhttps://github.com/geodynamics/aspect/releases/download/v1.4.0/manual-1.4.0.pdf",
-                bibtexkey: "aspect_manual_1_4_0",
-                bibtex: "@misc{aspect_manual_1_4_0,\ntitle={{ASPECT: Advanced Solver for Problems in Earth's ConvecTion v1.4.0}},\nhowpublished={\\url{https://github.com/geodynamics/aspect/releases/download/v1.4.0/manual-1.4.0.pdf}\n}",
-                url: "",
-                scholar: "",
-	group: ""
-            },
-
-	    manual150: {
-                text: "W. Bangerth and J. Dannberg and R. Gassm&ouml;ller and T. Heister and others:\nASPECT: Advanced Solver for Problems in Earth's ConvecTion v1.5.0\nComputational Infrastructure for Geodynamics, 2016.\nhttps://github.com/geodynamics/aspect/releases/download/v1.5.0/manual-1.5.0.pdf",
-                bibtexkey: "aspect_manual_1_5_0",
-                bibtex: "@misc{aspect_manual_1_5_0,\ntitle={{ASPECT: Advanced Solver for Problems in Earth's ConvecTion v1.5.0}},\nhowpublished={\\url{https://github.com/geodynamics/aspect/releases/download/v1.5.0/manual-1.5..0.pdf}\n}",
-                url: "",
-                scholar: "",
-	group: ""
-            },
-
-            fs: {
-                text: "Rose, I., Buffett, B., &amp; Heister, T. (2017). Stability and accuracy of free surface time integration in viscous flows. Physics of the Earth and Planetary Interiors, 262, 90–100. doi:10.1016/j.pepi.2016.11.007",
-                bibtexkey: "rose_freesurface",
-                bibtex: '@Article{rose_freesurface,\nTitle                    = {Stability and accuracy of free surface time integration in viscous flows},\nAuthor                   = {Ian Rose and Bruce Buffett and Timo Heister},\nJournal                  = {Physics of the Earth and Planetary Interiors},\nYear                     = {2017},\nPages                    = {90 - 100},\nVolume                   = {262},\nDoi                      = {http://dx.doi.org/10.1016/j.pepi.2016.11.007},\nISSN                     = {0031-9201},\nUrl                      = {http://www.sciencedirect.com/science/article/pii/S0031920116300954}\n}',
-                url: "http://bla.frees",
-                scholar: "",
-	group: "fs"
-            },
-
-            melt: {
-                text: "Dannberg, J., &amp; Heister, T. (2016). Compressible magma/mantle dynamics: 3-D, adaptive simulations in ASPECT. Geophysical Journal International, 207(3), 1343–1366. doi:10.1093/gji/ggw329",
-                bibtexkey: "dannberg_melt",
-                bibtex: "@Article{dannberg_melt,\ntitle={Compressible magma/mantle dynamics: {3D}, adaptive simulations in {ASPECT}},\nauthor={Dannberg, J. and Heister, T.},\njournal={Geophysical Journal International},\nvolume={207},\nnumber={3},\npages={1343--1366},\nyear={2016},\npublisher={Oxford University Press},\ndoi = {10.1093/gji/ggw329},\nurl = {https://dx.doi.org/10.1093/gji/ggw329}\n}",
-                url: "http://bla.melt",
-                scholar: "",
-group: "melt"
-            },
-
-            particle1: {
-                text: "R. Gassmoeller, E. Heien, E. G. Puckett, W. Bangerth (2017). Flexible and scalable particle-in-cell methods for massively parallel computations. arXiv:1612.03369",
-                bibtexkey: "gassmoeller_particles",
-                bibtex: '@article{gassmoeller_particles,\ntitle={Flexible and scalable particle-in-cell methods for massively parallel computations},\nauthor={Gassmoeller, Rene and Heien, Eric and Puckett, Elbridge Gerry and Bangerth, Wolfgang},\njournal={arXiv preprint arXiv:1612.03369},\nyear={2016}\n}',
-                url: "http://bla",
-                scholar: "",
-group: "particles"
-            },
-
-            particle2: {
-                text: "",
-                bibtexkey: "",
-                bibtex: '',
-                url: "http://bla",
-                scholar: "",
-                group: ""
-            },
-
-
-            dg: {
-                text: "He, Y., Puckett, E. G., &amp; Billen, M. I. (2017). A discontinuous Galerkin method with a bound preserving limiter for the advection of non-diffusive fields in solid Earth geodynamics. Physics of the Earth and Planetary Interiors, 263, 23–37. doi:10.1016/j.pepi.2016.12.001",
-                bibtexkey: "He_2017_DG",
-                bibtex: '@article{He_2017_DG,\nTitle                    = {A discontinuous Galerkin method with a bound preserving limiter for the advection of non-diffusive fields in solid Earth geodynamics },\nAuthor                   = {Ying He and Elbridge Gerry Puckett and Magali I. Billen},\nJournal                  = {Physics of the Earth and Planetary Interiors },\nYear                     = {2017},\nPages                    = {23 - 37},\nVolume                   = {263},\nDoi                      = {https://doi.org/10.1016/j.pepi.2016.12.001},\nISSN                     = {0031-9201},\nKeywords                 = {Geodynamics},\nUrl                      = {http://www.sciencedirect.com/science/article/pii/S0031920116300747}\n}',
-                url: "http://bla",
-                scholar: "",
-                group: "dg"
-            },
-
-
-            tmp: {
-                text: "",
-                bibtexkey: "",
-                bibtex: '',
-                url: "http://bla",
-                scholar: "",
-                group: ""
-            },
-
-        };
-
-        var intext = "Computations were done using the ASPECT code version <i>VERSION</i>, see \\cite{CITEKEYS}.";
+        var intext = "Computations were done using the ASPECT code version <i>VERSION</i>, see \n\\cite{CITEKEYS}.";
 
         var thanks = "We thank the Computational Infrastructure for Geodynamics (geodynamics.org) which is funded by the National Science Foundation under award EAR-0949446 and EAR-1550901 for supporting the development of ASPECT.";
     </script>
@@ -160,6 +58,8 @@ To give credit to the authors of significant pieces contributed to ASPECT, pleas
     <form action="" class="editbox">
         <label>Version: <select id="ver" onchange="update()">
 	    <option value="dev">dev</option>
+	    <option value="2.0.1">2.0.1</option>
+	    <option value="2.0.0">2.0.0</option>
 	    <option value="1.5.0">1.5.0</option>
 	    <option value="1.4.0">1.4.0</option>
 	</select></label>
@@ -231,7 +131,7 @@ continue;
 				}
             }
 
-            document.getElementById('intext').innerHTML = intext.replace("CITEKEYS", keys.join(", ")).replace("VERSION",version);
+            document.getElementById('intext').innerHTML = intext.replace("CITEKEYS", keys.join(",")).replace("VERSION",version);
             document.getElementById('thanks').innerHTML = thanks;
 
             document.getElementById('paper').innerHTML = txt.replace(/\n/g, "\n<br/>");
@@ -263,7 +163,9 @@ continue;
 
 	var version = getParameterByName("ver");
 	if (version)
-	   document.getElementById('ver').value = version;
+				document.getElementById('ver').value = version;
+				if (document.getElementById('ver').selectedIndex==-1)
+				document.getElementById('ver').selectedIndex = 0;
             update();
         }
 
