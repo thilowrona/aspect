@@ -7,10 +7,11 @@
     <title>Citing ASPECT</title>
     <style type="text/css">
         .box {
-            background: lightgray;
+        background: lightgray;
 	font-family: monospace;
-            width: 75%;
-            padding: 10px;word-wrap: break-word;
+        width: 75%;
+        padding: 10px;
+	word-wrap: break-word;
         }
 
         .editbox {
@@ -42,9 +43,6 @@
     <script type="text/javascript">
         var checkboxes = ["fs", "melt","particles","dg"];
 
-	var x= 'abc\"def';
-
-
         var intext = "Computations were done using the ASPECT code version <i>VERSION</i>, see \n\\cite{CITEKEYS}.";
 
         var thanks = "We thank the Computational Infrastructure for Geodynamics (geodynamics.org) which is funded by the National Science Foundation under award EAR-0949446 and EAR-1550901 for supporting the development of ASPECT.";
@@ -68,7 +66,7 @@ To give credit to the authors of significant pieces contributed to ASPECT, pleas
         <label><input type="checkbox" id="melt" onchange="update()">Melt Transport</label>
         <label><input type="checkbox" id="particles" onchange="update()">Particles</label>
         <label><input type="checkbox" id="dg" onchange="update()">DG advection</label>
-	&nbsp;
+	&nbsp;&nbsp;&nbsp;
         <label><input type="checkbox" id="checkall" onchange="do_checkall()">(check all)</label>
 	<br/>
 	<!-- TODO: plasticity? Newton? vof? geoid? topography? -->
@@ -103,7 +101,8 @@ all the references below:
             var selected_groups = ["main"];
             var urlstuff = [];
 	    var version = document.getElementById('ver').value;
-	    urlstuff.push("ver="+version);
+			    urlstuff.push("ver="+version);
+                    selected_groups.push(version);			    
             for (var i = 0; i < checkboxes.length; ++i)
                 if (document.getElementById(checkboxes[i]).checked)
 {
